@@ -40,23 +40,24 @@ function App() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               {/* Logo */}
-              <div className="flex items-center space-x-2">
+              <Link to="/" className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
                   <div className="w-4 h-4 bg-white rounded-full relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full animate-pulse"></div>
                   </div>
                 </div>
                 <span className="text-xl font-bold">Faro</span>
-              </div>
+              </Link>
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-8">
                 <a href="#product" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Product</a>
                 <a href="#agencies" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">For Agencies</a>
                 <a href="#smbs" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">For SMBs</a>
-                <a href="#pricing" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Pricing</a>
-                <a href="#resources" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Resources</a>
-                <a href="http://localhost:3001/signin" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Sign in</a>
+                <Link to="/pricing" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Pricing</Link>
+                <Link to="/docs" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Docs</Link>
+                <Link to="/blog" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Blog</Link>
+                <a href="https://app.farohq.com/signin" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Sign in</a>
               </div>
 
               {/* CTA & Theme Toggle */}
@@ -67,9 +68,9 @@ function App() {
                 >
                   {darkMode ? '☀️' : '🌙'}
                 </button>
-                <a href="/demo" className="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                <Link to="/demo" className="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                   Get a demo
-                </a>
+                </Link>
                 <button 
                   className="md:hidden"
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -84,13 +85,14 @@ function App() {
           {mobileMenuOpen && (
             <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
               <div className="px-4 py-4 space-y-4">
-                <a href="#product" className="block text-gray-600 dark:text-gray-300">Product</a>
-                <a href="#agencies" className="block text-gray-600 dark:text-gray-300">For Agencies</a>
-                <a href="#smbs" className="block text-gray-600 dark:text-gray-300">For SMBs</a>
-                <a href="#pricing" className="block text-gray-600 dark:text-gray-300">Pricing</a>
-                <a href="#resources" className="block text-gray-600 dark:text-gray-300">Resources</a>
-                <a href="http://localhost:3001/signin" className="block text-gray-600 dark:text-gray-300">Sign in</a>
-                <a href="/demo" className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg block text-center">Get a demo</a>
+                <a href="#product" className="block text-gray-600 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>Product</a>
+                <a href="#agencies" className="block text-gray-600 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>For Agencies</a>
+                <a href="#smbs" className="block text-gray-600 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>For SMBs</a>
+                <Link to="/pricing" className="block text-gray-600 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
+                <Link to="/docs" className="block text-gray-600 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>Docs</Link>
+                <Link to="/blog" className="block text-gray-600 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
+                <a href="https://app.farohq.com/signin" className="block text-gray-600 dark:text-gray-300" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Sign in</a>
+                <Link to="/demo" className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg block text-center" onClick={() => setMobileMenuOpen(false)}>Get a demo</Link>
               </div>
             </div>
           )}
@@ -115,13 +117,13 @@ function App() {
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16">
-                <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 text-lg font-semibold">
+                <a href="https://app.farohq.com/signup" className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 text-lg font-semibold" target="_blank" rel="noopener noreferrer">
                   <span>Start free</span>
                   <ArrowRight className="w-5 h-5" />
-                </button>
-                <a href="/demo" className="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-lg">
-                  Get a demo
                 </a>
+                <Link to="/demo" className="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-lg">
+                  Get a demo
+                </Link>
               </div>
 
               {/* Proof Bar */}
