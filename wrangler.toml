@@ -1,0 +1,13 @@
+name = "farohq-static-site"
+compatibility_date = "2024-01-01"
+
+[env.production]
+routes = [
+  { pattern = "farohq.com", zone_name = "farohq.com" },
+  { pattern = "www.farohq.com", zone_name = "farohq.com" }
+]
+
+[env.staging]
+routes = [
+  { pattern = "staging.farohq.com", zone_name = "farohq.com" }
+]
