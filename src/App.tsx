@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
   ChevronDown, 
@@ -221,9 +222,9 @@ function App() {
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
                 Faro is your lighthouse—cutting through the chaos of scattered tools to guide your local growth with clarity and measurable results.
               </p>
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+              <Link to="/products" className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block">
                 See how it works
-              </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -566,9 +567,9 @@ function App() {
                   </div>
                 </div>
                 
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                <Link to="/products" className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block">
                   See agency features
-                </button>
+                </Link>
               </div>
               
               <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
@@ -662,9 +663,9 @@ function App() {
                   </div>
                 </div>
                 
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                <a href="https://app.farohq.com/signup" className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block" target="_blank" rel="noopener noreferrer">
                   Start free
-                </button>
+                </a>
               </div>
               
               <div className="lg:order-1 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
@@ -868,9 +869,9 @@ function App() {
                       </li>
                     </ul>
 
-                    <a href="/demo" className="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors block text-center">
+                    <Link to="/demo" className="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors block text-center">
                       Contact sales
-                    </a>
+                    </Link>
                   </div>
                 </div>
             )}
@@ -1005,9 +1006,9 @@ function App() {
                       </li>
                     </ul>
 
-                    <a href="/demo" className="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors block text-center">
+                    <Link to="/demo" className="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors block text-center">
                       Contact sales
-                    </a>
+                    </Link>
                   </div>
                 </div>
             )}
