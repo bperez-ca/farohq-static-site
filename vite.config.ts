@@ -14,7 +14,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@farohq/ui': path.resolve(__dirname, '../lvos/packages/ui'),
+      '@farohq/ui': path.resolve(__dirname, '../../packages/ui'),
     },
   },
   optimizeDeps: {

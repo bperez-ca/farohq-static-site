@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
   ChevronDown, 
@@ -40,24 +39,23 @@ function App() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               {/* Logo */}
-              <Link to="/" className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
                   <div className="w-4 h-4 bg-white rounded-full relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full animate-pulse"></div>
                   </div>
                 </div>
                 <span className="text-xl font-bold">Faro</span>
-              </Link>
+              </div>
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-8">
                 <a href="#product" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Product</a>
                 <a href="#agencies" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">For Agencies</a>
                 <a href="#smbs" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">For SMBs</a>
-                <Link to="/pricing" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Pricing</Link>
-                <Link to="/docs" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Docs</Link>
-                <Link to="/blog" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Blog</Link>
-                <a href="https://app.farohq.com/signin" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Sign in</a>
+                <a href="#pricing" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Pricing</a>
+                <a href="#resources" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Resources</a>
+                <a href="http://localhost:3001/signin" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Sign in</a>
               </div>
 
               {/* CTA & Theme Toggle */}
@@ -68,9 +66,9 @@ function App() {
                 >
                   {darkMode ? '☀️' : '🌙'}
                 </button>
-                <Link to="/demo" className="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                <a href="/demo" className="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                   Get a demo
-                </Link>
+                </a>
                 <button 
                   className="md:hidden"
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -85,14 +83,13 @@ function App() {
           {mobileMenuOpen && (
             <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
               <div className="px-4 py-4 space-y-4">
-                <a href="#product" className="block text-gray-600 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>Product</a>
-                <a href="#agencies" className="block text-gray-600 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>For Agencies</a>
-                <a href="#smbs" className="block text-gray-600 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>For SMBs</a>
-                <Link to="/pricing" className="block text-gray-600 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
-                <Link to="/docs" className="block text-gray-600 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>Docs</Link>
-                <Link to="/blog" className="block text-gray-600 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
-                <a href="https://app.farohq.com/signin" className="block text-gray-600 dark:text-gray-300" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Sign in</a>
-                <Link to="/demo" className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg block text-center" onClick={() => setMobileMenuOpen(false)}>Get a demo</Link>
+                <a href="#product" className="block text-gray-600 dark:text-gray-300">Product</a>
+                <a href="#agencies" className="block text-gray-600 dark:text-gray-300">For Agencies</a>
+                <a href="#smbs" className="block text-gray-600 dark:text-gray-300">For SMBs</a>
+                <a href="#pricing" className="block text-gray-600 dark:text-gray-300">Pricing</a>
+                <a href="#resources" className="block text-gray-600 dark:text-gray-300">Resources</a>
+                <a href="http://localhost:3001/signin" className="block text-gray-600 dark:text-gray-300">Sign in</a>
+                <a href="/demo" className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg block text-center">Get a demo</a>
               </div>
             </div>
           )}
@@ -117,13 +114,13 @@ function App() {
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16">
-                <a href="https://app.farohq.com/signup" className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 text-lg font-semibold" target="_blank" rel="noopener noreferrer">
+                <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 text-lg font-semibold">
                   <span>Start free</span>
                   <ArrowRight className="w-5 h-5" />
-                </a>
-                <Link to="/demo" className="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-lg">
+                </button>
+                <a href="/demo" className="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-lg">
                   Get a demo
-                </Link>
+                </a>
               </div>
 
               {/* Proof Bar */}
@@ -224,9 +221,9 @@ function App() {
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
                 Faro is your lighthouse—cutting through the chaos of scattered tools to guide your local growth with clarity and measurable results.
               </p>
-              <Link to="/products" className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block">
+              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
                 See how it works
-              </Link>
+              </button>
             </div>
           </div>
         </section>
@@ -569,9 +566,9 @@ function App() {
                   </div>
                 </div>
                 
-                <Link to="/products" className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block">
+                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
                   See agency features
-                </Link>
+                </button>
               </div>
               
               <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
@@ -665,9 +662,9 @@ function App() {
                   </div>
                 </div>
                 
-                <a href="https://app.farohq.com/signup" className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block" target="_blank" rel="noopener noreferrer">
+                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
                   Start free
-                </a>
+                </button>
               </div>
               
               <div className="lg:order-1 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
@@ -871,9 +868,9 @@ function App() {
                       </li>
                     </ul>
 
-                    <Link to="/demo" className="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors block text-center">
+                    <a href="/demo" className="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors block text-center">
                       Contact sales
-                    </Link>
+                    </a>
                   </div>
                 </div>
             )}
@@ -1008,9 +1005,9 @@ function App() {
                       </li>
                     </ul>
 
-                    <Link to="/demo" className="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors block text-center">
+                    <a href="/demo" className="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors block text-center">
                       Contact sales
-                    </Link>
+                    </a>
                   </div>
                 </div>
             )}
